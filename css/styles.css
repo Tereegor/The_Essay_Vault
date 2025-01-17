@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f9f9f9;
+    text-decoration: underline;
+    transform: translateY(-3px);
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #ffffff, #f1f8e9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+main:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png');
+    background-repeat: repeat;
+}
+
+form input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    transform: scale(1.05);
+}
+
+form button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #444;
+}
+
+button, a, input[type="text"]:focus, footer {
+    cursor: pointer;
+}
+
