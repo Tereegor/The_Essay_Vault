@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сочинения по литературным произведениям</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
@@ -14,10 +15,8 @@
 <div class="search-bar">
     <input type="text" id="search-input" placeholder="Введите название произведения">
     <button onclick="searchEssays()">Найти</button>
-    <button class="reset-btn" onclick="resetSearch()">Сбросить</button>
+    <button onclick="resetSearch()">Сбросить</button>
 </div>
-
-<div class="counter" id="counter"></div>
 
 <div id="results">
     <h2>Результаты поиска</h2>
@@ -32,8 +31,7 @@
     ];
     const baseURL = "https://raw.githubusercontent.com/Tereegor/The_Essay_Vault/main/pages/";
     const essays = {};
-    const resultsContainer = document.getElementById("results-container");
-    const counterElement = document.getElementById("counter");
+    const resultsContainer = document.getElementById('results-container');
 
     async function loadEssays() {
         for (const file of files) {
@@ -45,45 +43,44 @@
                     essays[file] = text;
                 }
             } catch (error) {
-                console.error("Ошибка загрузки файла:", file);
+                console.error('Ошибка загрузки файла:', file);
             }
         }
     }
 
     function searchEssays() {
-        const query = document.getElementById("search-input").value.toLowerCase();
-        resultsContainer.innerHTML = "";
+        const query = document.getElementById('search-input').value.toLowerCase();
+        resultsContainer.innerHTML = '';
         let found = 0;
 
         Object.entries(essays).forEach(([title, content]) => {
-            const normalizedTitle = title.toLowerCase().replace(/_/g, " ").replace(".txt", "");
+            const normalizedTitle = title.toLowerCase().replace(/_/g, ' ').replace('.txt', '');
 
             if (normalizedTitle.includes(query)) {
                 found++;
-                const highlightedTitle = normalizedTitle.replace(
-                    new RegExp(query, "gi"),
-                    (match) => `<span>${match}</span>`
-                );
+                const resultDiv = document.createElement('div');
+                resultDiv.className = 'essay';
 
-                const resultDiv = document.createElement("div");
-                resultDiv.className = "essay";
+                const paragraphs = content.split('\n').filter(paragraph => paragraph.trim() !== '');
+                const formattedContent = paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
+
                 resultDiv.innerHTML = `
-                    <h2>${highlightedTitle}</h2>
-                    <pre>${content.substring(0, 300)}...</pre>
-                `;
+                <h2>${normalizedTitle}</h2>
+                <div class="content">${formattedContent}</div>
+            `;
                 resultsContainer.appendChild(resultDiv);
             }
         });
 
-        counterElement.textContent = found
-            ? `Найдено результатов: ${found}`
-            : "Ничего не найдено.";
+        if (found === 0) {
+            resultsContainer.innerHTML = `<p>Ничего не найдено.</p>`;
+        }
     }
 
+
     function resetSearch() {
-        document.getElementById("search-input").value = "";
-        resultsContainer.innerHTML = "";
-        counterElement.textContent = "";
+        document.getElementById('search-input').value = '';
+        resultsContainer.innerHTML = '';
     }
 
     loadEssays();

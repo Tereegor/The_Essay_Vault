@@ -7,6 +7,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+
 header {
     background: linear-gradient(135deg, #3cb43c, #228b22);
     padding: 50px 20px;
@@ -14,22 +15,26 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1s ease-out;
 }
+
 header h1 {
     margin: 0;
     font-size: 3.2em;
     color: #fff;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
+
 header p {
     margin: 10px 0;
     color: #d0d0d0;
     font-size: 1.5em;
 }
+
 .search-bar {
     margin: 30px auto;
     text-align: center;
     animation: slideIn 0.8s ease-out;
 }
+
 .search-bar input {
     width: 70%;
     max-width: 500px;
@@ -41,11 +46,13 @@ header p {
     color: #f0f0f0;
     transition: all 0.3s ease;
 }
+
 .search-bar input:focus {
     outline: none;
     border-color: #3cb43c;
     box-shadow: 0 0 10px rgba(60, 180, 60, 0.5);
 }
+
 .search-bar button {
     padding: 15px 20px;
     font-size: 1.2em;
@@ -57,29 +64,35 @@ header p {
     margin-left: 15px;
     transition: all 0.3s ease;
 }
+
 .search-bar button:hover {
     background: #228b22;
     transform: scale(1.05);
 }
+
 .search-bar .reset-btn {
     background: #444;
     color: #f0f0f0;
     border: 2px solid #3cb43c;
 }
+
 .counter {
     margin-top: 20px;
     font-size: 1.2em;
     color: #bbb;
 }
+
 #results {
     margin-top: 20px;
     text-align: center;
 }
+
 #results h2 {
     font-size: 2em;
     margin-bottom: 10px;
     animation: fadeIn 1s ease-in-out;
 }
+
 .essay {
     margin: 15px auto;
     padding: 20px;
@@ -90,21 +103,25 @@ header p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .essay:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
+
 .essay h2 {
     margin: 0;
     color: #32cd32;
     font-weight: bold;
 }
+
 .essay h2 span {
     background: #228b22;
     padding: 0 5px;
     border-radius: 5px;
     color: #fff;
 }
+
 .essay pre {
     margin-top: 15px;
     padding: 15px;
@@ -113,16 +130,35 @@ header p {
     color: #d0d0d0;
     overflow-x: auto;
 }
+
 .loading {
     font-size: 1.5em;
     margin-top: 20px;
     color: #aaa;
 }
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.essay .content p {
+    margin: 10px 0;
+    text-align: justify;
+    line-height: 1.8;
 }
